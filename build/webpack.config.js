@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const config = require('./config')
+const env = require('./env')
 const optimization = require('./optimization')
 
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
     devtool: 'inline-source-map',
     entry: './src/index.tsx',
     output: {
+        // path: config.assetsRoot,
         path: path.resolve(__dirname, './../dist'),
         filename: '[name].[hash].js'
     },
