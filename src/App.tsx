@@ -1,9 +1,11 @@
 import * as React from 'react'
 
+import './index.scss'
+
 class App extends React.Component {
     render() {
         return (
-            <div>123123</div>
+            <div className='app'>123123</div>
         )
     }
 }
