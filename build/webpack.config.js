@@ -11,8 +11,7 @@ module.exports = {
     devtool: 'inline-source-map',
     entry: './src/index.tsx',
     output: {
-        // path: config.assetsRoot,
-        path: path.resolve(__dirname, './../dist'),
+        path: config.assetsRoot,
         filename: '[name].[hash].js'
     },
     resolve: {
