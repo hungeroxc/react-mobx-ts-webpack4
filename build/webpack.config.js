@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const config = require('./config')
+const optimization = require('./optimization')
 
 module.exports = {
     mode: 'development',
@@ -42,6 +43,7 @@ module.exports = {
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css'
         })
-    ]
+    ],
+    optimization
 }
 
