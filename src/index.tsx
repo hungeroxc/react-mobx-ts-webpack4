@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
-import App from './containers/views/App'
+import App from '@views/App'
 
 const render = Component => {
     ReactDOM.render(
