@@ -5,7 +5,7 @@ import './index.scss'
 class App extends React.Component {
     render() {
         return (
-            <div className='app'>123123</div>
+            <div className="app">app</div>
         )
     }
 }
