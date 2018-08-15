@@ -11,7 +11,7 @@ module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
     entry: {
-        app: ['babel-polyfill', './src/index.tsx']
+        app: './src/index.tsx'
     },
     output: {
         path: config.assetsRoot,
