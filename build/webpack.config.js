@@ -29,7 +29,11 @@ module.exports = {
         rules: [
             {
                 test: /\.ts(x?)$/,
-                loader: 'ts-loader'
+                use: [
+                    {
+                        loader: 'awesome-typescript-loader'
+                    }
+                ]
             },
             {
                 test: /\.(sa|sc|c)ss$/,
