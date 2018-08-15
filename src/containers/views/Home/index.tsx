@@ -1,10 +1,23 @@
 import * as React from 'react'
+import {inject, observer} from 'mobx-react'
 
-class Home extends React.Component {
+import Increase from './Increase'
+import Decrease from './Decrease'
+
+interface Props {
+    globalStore?: any
+}
+
+@inject('globalStore')
+@observer
+class Home extends React.Component<Props> {
     render() {
+        const {num, increase, decrease} = this.props.globalStore
         return (
             <div className="home">
-                这里是home
+                <div>{num}</div>
+                <Increase increase={increase}/>
+                <Decrease decrease={decrease}/>
             </div>
         )
     }
