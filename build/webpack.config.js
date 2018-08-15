@@ -10,7 +10,9 @@ const optimization = require('./optimization')
 module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
-    entry: './src/index.tsx',
+    entry: {
+        app: ['babel-polyfill', './src/index.tsx']
+    },
     output: {
         path: config.assetsRoot,
         filename: '[name].[hash].js'
@@ -31,7 +33,16 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 use: [
                     {
-                        loader: 'awesome-typescript-loader'
+                        loader: 'awesome-typescript-loader',
+                        options: {
+                            // babel的使用移到awesome-typescript-loader中，这样就不用编写.babelrc文件
+                            useBabel: true,
+                            babelOptions: {
+                                // 不适用babelrc文件
+                                babelrc: false,
+                                plugins: ['react-hot-loader/babel']
+                            }
+                        }
                     }
                 ]
             },
