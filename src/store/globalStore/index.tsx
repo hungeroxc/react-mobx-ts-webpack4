@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx'
 
-class GlobalStore {
+export class GlobalStore {
     // 测试用数字
     @observable num: number = 0
 

@@ -5,7 +5,7 @@ import Increase from './Increase'
 import Decrease from './Decrease'
 
 interface Props {
-    globalStore?: any
+    globalStore?: IGlobalStore.GlobalStore
 }
 
 @inject('globalStore')
