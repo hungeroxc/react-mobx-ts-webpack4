@@ -2,9 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const config = require('./../config')
-
-
-console.log(path.join(__dirname, './../../', 'src'))
+const theme = require('./../../theme')
 
 const cssLoader = {
     test: /\.css$/,
@@ -27,6 +25,23 @@ const scssLoader = {
     ]
 }
 
+const lessLoader = {
+    test: /\.less$/,
+    use: [
+        config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
+        'css-loader',
+        {
+            loader: 'less-loader',
+            options: {
+                // 禁用内联js代码，这个功能用于禁用在样式表里面写js代码
+                javascriptEnabled: true,
+                // 根据antd官网进行主题修改
+                modifyVars: theme
+            }
+        }
+    ]
+}
+
 module.exports = [
-    cssLoader, scssLoader
+    cssLoader, scssLoader, lessLoader
 ]

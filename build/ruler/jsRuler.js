@@ -21,7 +21,7 @@ module.exports = [
                                 libraryName: 'antd',
                                 libraryDirectory: 'lib',
                                 // true的话会将antd里面的less抽离出来，填写css的话则会抽离css，但是抽离css的话就不能自定义antd的主题
-                                style: 'css'
+                                style: true
                             })
                         ]
                     })
