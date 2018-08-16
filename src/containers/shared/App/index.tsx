@@ -4,7 +4,7 @@ import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import './index.scss'
 import Home from '@views/Home'
-import Page from '@views/page'
+import Page from '@views/Page'
 
 @hot(module)
 class App extends React.Component {

@@ -11,7 +11,7 @@ module.exports = [
                     // babel的使用移到awesome-typescript-loader中，这样就不用编写.babelrc文件
                     useBabel: true,
                     babelOptions: {
-                        // 不适用babelrc文件
+                        // 不需要babelrc文件
                         babelrc: false,
                         plugins: ['react-hot-loader/babel']
                     },
