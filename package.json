@@ -17,6 +17,7 @@
     "mobx-react": "^5.2.5",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-plugin-import": "^1.8.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-polyfill": "^6.26.0",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",

@@ -13,7 +13,7 @@ module.exports = [
                     babelOptions: {
                         // 不需要babelrc文件
                         babelrc: false,
-                        plugins: ['react-hot-loader/babel']
+                        plugins: ['syntax-dynamic-import', 'react-hot-loader/babel']
                     },
                     getCustomTransformers: () => ({
                         before: [

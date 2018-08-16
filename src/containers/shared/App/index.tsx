@@ -1,10 +1,23 @@
 import * as React from 'react'
 import {hot} from 'react-hot-loader'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import Loadable from 'react-loadable'
 
 import './index.scss'
-import Home from '@views/Home'
-import Page from '@views/Page'
+
+function Loading() {
+    return <div>Loading...</div>;
+}
+
+const Home = Loadable({
+    loader: () => import(/* webpackChunkName: "home" */ '@views/Home'),
+    loading: Loading,
+})
+
+const Page = Loadable({
+    loader: () => import(/* webpackChunkName: "page" */ '@views/Page'),
+    loading: Loading,
+})
 
 @hot(module)
 class App extends React.Component {
