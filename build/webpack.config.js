@@ -6,7 +6,8 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const config = require('./config')
 const optimization = require('./optimization')
 const styleRuler = require('./ruler/styleRuler')
-const jsRuler = require('./ruler/jsRuler.js')
+const jsRuler = require('./ruler/jsRuler')
+const fileRuler = require('./ruler/fileRuler')
 const plugins = require('./plugins')
 
 module.exports = {
@@ -32,7 +33,8 @@ module.exports = {
     module: {
         rules: [
             ...jsRuler,
-            ...styleRuler
+            ...styleRuler,
+            ...fileRuler
         ]
     },
     plugins,
