@@ -19,7 +19,8 @@ const cssLoader = {
     use: [
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
         cacheLoader,
-        'css-loader'
+        'css-loader',
+        'postcss-loader'
     ]
 }
 
@@ -41,6 +42,7 @@ const scssLoader = {
     use: [
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
         typingsForCssModulesLoader,
+        'postcss-loader',
         'sass-loader'
     ]
 }
@@ -52,6 +54,7 @@ const lessLoader = {
     use: [
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
         'css-loader',
+        'postcss-loader',
         {
             loader: 'less-loader',
             options: {
