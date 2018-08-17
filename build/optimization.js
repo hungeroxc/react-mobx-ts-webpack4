@@ -5,6 +5,19 @@ const env = require('./env')
 
 
 module.exports = env.APP_ENV === 'dev' ? {} : {
+    runtimeChunk: {
+        name: 'manifest'
+    },
+    splitChunks: {
+        cacheGroups: {
+            default: false,
+            commons: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendor',
+                chunks: 'all'
+            }
+        }
+    },
     minimizer: [
         new UglifyJsPlugin({
             // 使用文件缓存，当js文件没有变化时候就利用缓存

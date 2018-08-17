@@ -11,14 +11,13 @@ const fileRuler = require('./ruler/fileRuler')
 const plugins = require('./plugins')
 
 module.exports = {
-    mode: 'development',
-    devtool: 'inline-source-map',
+    devtool: '#source-map',
     entry: {
         app: './src/index.tsx'
     },
     output: {
         path: config.assetsRoot,
-        filename: '[name].[hash].js'
+        filename: 'js/[name].[chunkhash].js'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],

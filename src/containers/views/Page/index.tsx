@@ -13,7 +13,7 @@ class Page extends React.Component {
                 page123
                 <BindIcon width={50} height={50}/>
                 <Button type="primary">按钮</Button>
-                <img src={require('@assets/img/123.png')}/>
+                {/* <img src={require('@assets/img/123.png')}/> */}
             </div>
         )
     }

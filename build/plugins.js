@@ -8,7 +8,7 @@ module.exports = [
         template: path.join(__dirname, './tpl/index.html')
     }),
     new MiniCssExtractPlugin({
-        filename: '[name].[hash].css',
-        chunkFilename: '[id].[hash].css'
+        filename: 'css/[name].[hash].css',
+        chunkFilename: 'css/[name].[id].[hash].css'
     })
 ]
