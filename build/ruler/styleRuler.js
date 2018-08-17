@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const config = require('./../config')
 const theme = require('./../../theme')
 
+
+
 const cssLoader = {
     test: /\.css$/,
     // 因为只有node_modules里面有css，所以只针对该文件夹下文件进行编译
@@ -14,16 +16,29 @@ const cssLoader = {
     ]
 }
 
+// 使用css modules的形式来书写元素类名
+const typingsForCssModulesLoader = {
+    loader: 'typings-for-css-modules-loader',
+    options: {
+        modules: true,
+        namedExport: true,
+        camelCase: true,
+        sass: true
+    }
+}
+
 const scssLoader = {
     test: /\.scss$/,
     // 只针对src下的scss进行编译
     include: [path.join(__dirname, './../../', 'src')],
     use: [
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
-        'css-loader',
+        typingsForCssModulesLoader,
         'sass-loader'
     ]
 }
+
+
 
 const lessLoader = {
     test: /\.less$/,

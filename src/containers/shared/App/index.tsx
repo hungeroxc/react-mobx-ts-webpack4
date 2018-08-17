@@ -3,7 +3,7 @@ import {hot} from 'react-hot-loader'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Loadable from 'react-loadable'
 
-import './index.scss'
+import * as style from './index.scss'
 
 function Loading() {
     return <div>Loading...</div>;
@@ -24,7 +24,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="app">
+            <div className={style.app}>
                 <Router>
                     <Switch>
                         <Route exact path="/" component={Home}/>
