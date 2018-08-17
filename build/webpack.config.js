@@ -11,7 +11,7 @@ const fileRuler = require('./ruler/fileRuler')
 const plugins = require('./plugins')
 
 module.exports = {
-    devtool: '#source-map',
+    devtool: 'source-map',
     entry: {
         app: './src/index.tsx'
     },
