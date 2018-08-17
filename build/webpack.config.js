@@ -4,6 +4,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 
 const config = require('./config')
+const env = require('./env')
 const optimization = require('./optimization')
 const styleRuler = require('./ruler/styleRuler')
 const jsRuler = require('./ruler/jsRuler')
@@ -17,7 +18,8 @@ module.exports = {
     },
     output: {
         path: config.assetsRoot,
-        filename: 'js/[name].[chunkhash].js'
+        filename: env.APP_ENV === 'dev' ? '[name].js' : 'js/[name].[chunkhash].js',
+        chunkFilename: env.APP_ENV === 'dev' ? '[name].js' : 'js/[name].[id].[chunkhash].js'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],

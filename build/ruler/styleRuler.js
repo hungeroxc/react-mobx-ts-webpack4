@@ -4,7 +4,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const config = require('./../config')
 const theme = require('./../../theme')
 
-
+const cacheLoader = {
+    loader: 'cache-loader',
+    options: {
+        // css编译也进行缓存
+        cacheDirectory: path.join(__dirname, '../../', '.cache-loader')
+    }
+}
 
 const cssLoader = {
     test: /\.css$/,
@@ -12,6 +18,7 @@ const cssLoader = {
     include: [path.join(__dirname, './../../', 'node_modules')],
     use: [
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
+        cacheLoader,
         'css-loader'
     ]
 }

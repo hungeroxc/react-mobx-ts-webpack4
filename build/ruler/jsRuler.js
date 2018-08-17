@@ -1,5 +1,6 @@
 // 这个插件用于引入antd的代码分割，否则引入一个antd的组件就会把整个antd都引入进来
 const tsImportPluginFactory = require('ts-import-plugin')
+const path = require('path')
 
 module.exports = [
     {
@@ -8,6 +9,9 @@ module.exports = [
             {
                 loader: 'awesome-typescript-loader',
                 options: {
+                    // 编译缓存，用于加快构建(npm run dev)速度
+                    useCache: true,
+                    cacheDirectory: path.join(__dirname, '../../', '.cache-loader'),
                     // babel的使用移到awesome-typescript-loader中，这样就不用编写.babelrc文件
                     useBabel: true,
                     babelOptions: {
