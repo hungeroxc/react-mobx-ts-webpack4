@@ -1,0 +1,11 @@
+// @import '../../../styles/base.scss';
+@import 'base.scss';
+
+.page {
+    width: 400px;
+    height: 400px;
+    background-color: $red;
+    .a {
+        display: block;
+    }
+}

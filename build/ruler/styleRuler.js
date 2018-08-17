@@ -43,7 +43,12 @@ const scssLoader = {
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
         typingsForCssModulesLoader,
         'postcss-loader',
-        'sass-loader'
+        {
+            loader: 'sass-loader',
+            options: {
+                includePaths: [path.join(__dirname, './../../', 'src/styles' )]
+            }
+        }
     ]
 }
 
