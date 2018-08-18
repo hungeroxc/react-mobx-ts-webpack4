@@ -1,5 +1,7 @@
 const path = require('path')
 
+const {resolve} = require('./../pathUtils')
+
 module.exports = [
     {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,
@@ -13,6 +15,6 @@ module.exports = [
     {
         test: /\.svg$/,
         loader: '@svgr/webpack',
-        include: path.join(__dirname, './../../', 'src')
+        include: resolve('src')
     }
 ]

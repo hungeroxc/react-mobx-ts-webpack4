@@ -1,3 +1,9 @@
 // scss变量
 $red: red;
 $black: black;
+
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

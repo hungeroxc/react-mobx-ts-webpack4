@@ -2,12 +2,8 @@ import * as React from 'react'
 
 import './index.scss'
 
-class Test extends React.Component {
-    render() {
-        return (
-            <div className="test">Test</div>
-        )
-    }
+const Test = (): JSX.Element => {
+    return <div>123</div>
 }
 
 export default Test

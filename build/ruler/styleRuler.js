@@ -3,19 +3,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const config = require('./../config')
 const theme = require('./../../theme')
+const {resolve} = require('./../pathUtils')
 
 const cacheLoader = {
     loader: 'cache-loader',
     options: {
         // css编译也进行缓存
-        cacheDirectory: path.join(__dirname, '../../', '.cache-loader')
+        cacheDirectory: resolve('.cache-loader')
     }
 }
 
 const cssLoader = {
     test: /\.css$/,
     // 因为只有node_modules里面有css，所以只针对该文件夹下文件进行编译
-    include: [path.join(__dirname, './../../', 'node_modules')],
+    include: [resolve('node_modules')],
     use: [
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
         cacheLoader,
@@ -38,7 +39,7 @@ const typingsForCssModulesLoader = {
 const scssLoader = {
     test: /\.scss$/,
     // 只针对src下的scss进行编译
-    include: [path.join(__dirname, './../../', 'src')],
+    include: [resolve('src')],
     use: [
         config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
         typingsForCssModulesLoader,
@@ -46,7 +47,7 @@ const scssLoader = {
         {
             loader: 'sass-loader',
             options: {
-                includePaths: [path.join(__dirname, './../../', 'src/styles' )]
+                includePaths: [resolve('src/styles' )]
             }
         }
     ]
