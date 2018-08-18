@@ -1,11 +1,11 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const env = require('./env')
+const constants = require('./constants')
 const config = require('./config')
 
 
-module.exports = env.APP_ENV === 'dev' ? {} : {
+module.exports = constants.APP_ENV === 'dev' ? {} : {
     runtimeChunk: {
         name: 'manifest'
     },

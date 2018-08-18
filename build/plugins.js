@@ -1,8 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const {resolve} = require('./pathUtils')
-
 module.exports = [
     new HtmlWebpackPlugin({
         filename: 'index.html',
