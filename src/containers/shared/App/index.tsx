@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {hot} from 'react-hot-loader'
-import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import Loadable from 'react-loadable'
 
 import * as style from './index.scss'
