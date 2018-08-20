@@ -4,12 +4,12 @@ import {hot} from 'react-hot-loader'
 
 import BindIcon from '@assets/svg/bind.svg'
 import * as style from './index.scss'
-import {getRequest} from './../../../services/api'
+import { ComponentExt } from '@utils/reactExt'
 
 
 
 @hot(module)
-class Page extends React.Component {
+class Page extends ComponentExt {
     a = 'b'
 
     static staticA = 'staticA'
@@ -24,7 +24,7 @@ class Page extends React.Component {
     }
 
     getRequest = async () => {
-        const result = await getRequest({})
+        const result = await this.api.getRequest({})
         console.log(result)
     }
 

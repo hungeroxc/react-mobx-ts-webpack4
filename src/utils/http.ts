@@ -36,12 +36,20 @@ methods.forEach(method => {
         instance.interceptors.response.use(
             res => {
                 // 此处对响应做处理
+                message.destroy()
                 message.success(res.data.data.msg)
                 return res
             },
             error => Promise.reject(error)
         )
-        return instance.request(config)
+        return instance
+        .request(config)
+        .then(res => res)
+        // 错误统一处理
+        .catch(err => {
+            message.destroy()
+            message.error(err)
+        })
     }
 })
 
