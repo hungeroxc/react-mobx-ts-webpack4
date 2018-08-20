@@ -9,7 +9,7 @@ const styleRuler = require('./ruler/styleRuler')
 const jsRuler = require('./ruler/jsRuler')
 const fileRuler = require('./ruler/fileRuler')
 const plugins = require('./plugins')
-const { resolve } = require('./pathUtils')
+const { resolve, resolveAssetsRootDir } = require('./pathUtils')
 
 module.exports = {
     devtool: 'source-map',
@@ -18,8 +18,8 @@ module.exports = {
     },
     output: {
         path: config.assetsRoot,
-        filename: constants.APP_ENV === 'dev' ? '[name].js' : 'js/[name].[chunkhash].js',
-        chunkFilename: constants.APP_ENV === 'dev' ? '[name].js' : 'js/[name].[id].[chunkhash].js'
+        filename: constants.APP_ENV === 'dev' ? '[name].js' : resolveAssetsRootDir('js/[name].[chunkhash].js'),
+        chunkFilename: constants.APP_ENV === 'dev' ? '[name].js' : resolveAssetsRootDir('js/[name].[id].[chunkhash].js')
     },
     resolve: {
         extensions: constants.fileType,

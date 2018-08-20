@@ -6,6 +6,7 @@ const config = require('./config')
 
 
 module.exports = constants.APP_ENV === 'dev' ? {} : {
+    // 缓存webpack固定生成的代码块，该代码块通常不变，用于维系各各模块之间的关系
     runtimeChunk: {
         name: 'manifest'
     },
