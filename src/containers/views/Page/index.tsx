@@ -6,21 +6,12 @@ import BindIcon from '@assets/svg/bind.svg'
 import * as style from './index.scss'
 import { ComponentExt } from '@utils/reactExt'
 
-
-
 @hot(module)
 class Page extends ComponentExt {
     a = 'b'
 
-    static staticA = 'staticA'
-
     click = () => {
         console.log(this.a)
-        console.log(Page.conso())
-    }
-
-    static conso = () => {
-        return Page.staticA
     }
 
     getRequest = async () => {

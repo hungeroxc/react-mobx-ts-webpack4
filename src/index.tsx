@@ -19,4 +19,3 @@ const render = Component => {
 }
 
 render(App)
-

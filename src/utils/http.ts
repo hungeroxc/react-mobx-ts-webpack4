@@ -54,7 +54,3 @@ methods.forEach(method => {
 })
 
 export default http
-
-
-
-

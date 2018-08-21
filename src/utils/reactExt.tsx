@@ -18,5 +18,3 @@ export class StoreExt<P = {}, S = {}> extends React.Component<P, S> {
     readonly $message = message
     readonly $notification = notification
 }
-
-

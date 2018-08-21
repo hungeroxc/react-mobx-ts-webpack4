@@ -15,8 +15,6 @@ export class GlobalStore {
     decrease = (num: number) => {
         this.num -= num
     }
-
-
 }
 
 export default new GlobalStore()

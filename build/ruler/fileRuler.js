@@ -1,6 +1,6 @@
 const path = require('path')
 
-const {resolve} = require('./../pathUtils')
+const {resolve,resolveAssetsRootDir} = require('./../pathUtils')
 
 module.exports = [
     {
@@ -8,8 +8,8 @@ module.exports = [
         // 超出限定大小则使用file-loader，所以此处也需要安装file-loader
         loader: 'url-loader',
         query: {
-            limit: 10000,
-            name: path.posix.join('static', 'img/[name].[hash:7].[ext]')
+            limit: 8192,
+            name: resolveAssetsRootDir('img/[name].[hash:7].[ext]')
         }
     },
     {

@@ -6,7 +6,7 @@ import Loadable from 'react-loadable'
 import * as style from './index.scss'
 
 function Loading() {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
 }
 
 const Home = Loadable({
