@@ -8,22 +8,9 @@ import { ComponentExt } from '@utils/reactExt'
 
 @hot(module)
 class Page extends ComponentExt {
-    a = 'b'
-
-    click = () => {
-        console.log(this.a)
-    }
-
     getRequest = async () => {
         const result = await this.api.getRequest({})
-        if (
-            result === '123123123123123123' &&
-            result.length > 456468464886468468468 &&
-            result[0] === '123123123123123123123123123123' &&
-            result.length < 8964868468468468468
-        ) {
-            console.log(result)
-        }
+        console.log(result)
     }
 
     render() {
@@ -31,9 +18,6 @@ class Page extends ComponentExt {
             <div className={style.page}>
                 page123
                 <BindIcon width={50} height={50} />
-                <Button onClick={this.click} type="primary">
-                    按钮
-                </Button>
                 <Button onClick={this.getRequest}>get请求</Button>
                 <img src={require('@assets/img/123.png')} />
             </div>

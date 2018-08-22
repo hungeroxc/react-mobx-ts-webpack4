@@ -8,9 +8,7 @@ interface Props {
 
 class Increase extends ComponentExt<Props> {
     render() {
-        return (
-            <button onClick={() => this.props.increase(10)}>+</button>
-        )
+        return <button onClick={() => this.props.increase(10)}>+</button>
     }
 }
 
