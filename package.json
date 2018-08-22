@@ -8,7 +8,7 @@
     "dev": "cross-env APP_ENV=dev webpack-dev-server --config build/webpack.config.js --mode development --hot",
     "build": "webpack --config build/webpack.config.js --mode production",
     "lint": "tslint --type-check --project ./tsconfig.json",
-    "precommit": "node test.js"
+    "precommit": "npm run lint"
   },
   "keywords": [],
   "author": "",
