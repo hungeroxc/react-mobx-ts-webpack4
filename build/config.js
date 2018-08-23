@@ -8,7 +8,5 @@ module.exports = {
     // 在打包出的文件顶层加一个环境变量文件夹
     assetsRoot: path.resolve(__dirname, `./../dist/${constants.APP_ENV}`),
     // 打包后所有文件放置在static文件夹下
-    assetsSubDir: 'static',
-    // 为以后在正式环境接入sentry做source map准备
-    sourceMap: constants.APP_ENV !== 'qa'
+    assetsSubDir: 'static'
 }
