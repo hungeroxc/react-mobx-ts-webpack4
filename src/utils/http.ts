@@ -1,7 +1,8 @@
-import axios from 'axios'
-import {message} from 'antd'
+import axios, { AxiosRequestConfig } from 'axios'
+import { message } from 'antd'
+import qs from 'qs'
 
-import {DEFAULTBASEURL} from '@constants/index'
+import { DEFAULTBASEURL } from '@constants/index'
 
 interface HttpRequest {
     get?(url: string, data: any, baseUrl?: string): Promise<any>
@@ -16,10 +17,10 @@ const methods = ['get', 'post', 'delete', 'put']
 methods.forEach(method => {
     http[method] = (url, data, baseUrl?) => {
         // 设置axios请求配置
-        const config = {
+        const config: AxiosRequestConfig = {
             url,
             method,
-            baseUrl: baseUrl || DEFAULTBASEURL.baseURL
+            baseURL: baseUrl || DEFAULTBASEURL.baseURL
         }
         // 新建自定义配置axios实例，其中配置项只含有默认基础url
         const instance = axios.create(DEFAULTBASEURL)
@@ -42,14 +43,21 @@ methods.forEach(method => {
             },
             error => Promise.reject(error)
         )
-        return instance
-        .request(config)
-        .then(res => res)
-        // 错误统一处理
-        .catch(err => {
-            message.destroy()
-            message.error(err)
-        })
+        if (method === 'get') {
+            config.params = data
+        } else {
+            config.data = qs.stringify(data)
+        }
+        return (
+            instance
+                .request(config)
+                .then(res => res)
+                // 错误统一处理
+                .catch(err => {
+                    message.destroy()
+                    message.error(err)
+                })
+        )
     }
 })
 
