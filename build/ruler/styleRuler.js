@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const config = require('./../config')
 const theme = require('./../../theme')
-const {resolve} = require('./../pathUtils')
+const { resolve } = require('./../pathUtils')
 
 const cacheLoader = {
     loader: 'cache-loader',
@@ -16,12 +16,7 @@ const cssLoader = {
     test: /\.css$/,
     // 因为只有node_modules里面有css，所以只针对该文件夹下文件进行编译
     include: [resolve('node_modules')],
-    use: [
-        config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
-        cacheLoader,
-        'css-loader',
-        'postcss-loader'
-    ]
+    use: [config.extractCss ? MiniCssExtractPlugin.loader : 'style-loader', cacheLoader, 'css-loader', 'postcss-loader']
 }
 
 // 使用css modules的形式来书写元素类名
@@ -46,13 +41,11 @@ const scssLoader = {
         {
             loader: 'sass-loader',
             options: {
-                includePaths: [resolve('src/styles' )]
+                includePaths: [resolve('src/styles')]
             }
         }
     ]
 }
-
-
 
 const lessLoader = {
     test: /\.less$/,
@@ -72,6 +65,4 @@ const lessLoader = {
     ]
 }
 
-module.exports = [
-    cssLoader, scssLoader, lessLoader
-]
+module.exports = [cssLoader, scssLoader, lessLoader]
