@@ -8,9 +8,43 @@
 -   `npm run dev`
 -   如果用的是 vscode，那么可以安装`stylelint`、`tslint`以及`Prettier`进行代码格式校验和自动格式化(需要 .vscode 目录)，如果不是或者不需要则可以删除.vscode 文件夹
 
-### 注意事项
+### 目录结构(二级)
 
-.vscode 文件只适用于在 vscode 开发工具下使用，因为我在 vscode 中做了一些 `Prettier` 对`*.tsx`和`*.scss`文件的格式化配置，所以也一并推送上来，如果你使用的不是 vscode，那么可以删除这个文件夹针对自己的开发环境进行配置
+```
+├── README.md
+├── build  (webpack配置文件)
+│   ├── config.js
+│   ├── constants.js
+│   ├── optimization.js
+│   ├── pathUtils.js
+│   ├── plugins.js
+│   ├── ruler
+│   ├── tpl
+│   └── webpack.config.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── src
+│   ├── assets  (静态文件存储)
+│   ├── components  (通用展示型组件)
+│   ├── constants   (常量)
+│   ├── containers  (业务组件)
+│   │   ├── shared  (通用业务组件)
+│   │   └── views   (普通业务组件)
+│   ├── index.tsx
+│   ├── services    (api存储)
+│   ├── store
+│   ├── styles      (常用scss变量，含@mixin属性)
+│   └── utils       (常用工具类函数)
+├── theme.js        (antd主题设置)
+├── tsconfig.json
+├── tslint.json
+├── txt.txt
+└── typings        (全局ts类型)
+    ├── store.d.ts
+    ├── svg.d.ts
+    └── typed-css-modules.d.ts
+```
 
 ### 已经集成
 
@@ -28,6 +62,8 @@
     -   使 svg 可以以组件的方式引入
 -   [typings-for-css-modules-loader](https://github.com/Jimdo/typings-for-css-modules-loader)
     -   用于替代`css-loader`的 css module 功能，并动态生成`.scss`的`.d.ts`文件
+-   husky
+    -   pre-commit
 
 ### 组件写法实例
 
@@ -73,7 +109,7 @@ export interface GlobalStore extends GlobalStoreModel {}
 ```jsx
 declare interface IStore {
     globalStore: IGlobalStore.GlobalStore;
-    // 可以继续添加
+    // 可以继续添加store
 }
 ```
 
