@@ -8,7 +8,7 @@
 -   `npm run dev`
 -   如果用的是 vscode，那么可以安装`stylelint`、`tslint`以及`Prettier`进行代码格式校验和自动格式化(需要 .vscode 目录)，如果不是或者不需要则可以删除.vscode 文件夹
 
-### 目录结构(二级)
+### 目录结构
 
 ```
 ├── README.md
