@@ -1,7 +1,6 @@
 // 这个插件用于将tsconfig的paths里面的路径映射到webpack解析路径中去
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
-
 const config = require('./config')
 const constants = require('./constants')
 const optimization = require('./optimization')
@@ -32,13 +31,8 @@ module.exports = {
         ]
     },
     module: {
-        rules: [
-            ...jsRuler,
-            ...styleRuler,
-            ...fileRuler
-        ]
+        rules: [...jsRuler, ...styleRuler, ...fileRuler]
     },
     plugins,
     optimization
 }
-

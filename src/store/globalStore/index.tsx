@@ -1,8 +1,11 @@
-import {observable, action} from 'mobx'
+import { observable, action } from 'mobx'
 
-export class GlobalStore {
+import { StoreExt } from '@utils/reactExt'
+
+export class GlobalStore extends StoreExt {
     // 测试用数字
-    @observable num: number = 0
+    @observable
+    num: number = 0
 
     // 增加数字
     @action

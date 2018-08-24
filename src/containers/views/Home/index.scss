@@ -1,4 +1,10 @@
 .home {
     grid-area: main;
-    transition :transform 1s;
+    transition: transform 1s;
+
+    .aaa {
+        width: 400px;
+        height: 400px;
+        background-image: url('@assets/img/123.png');
+    }
 }

@@ -13,7 +13,7 @@ export class ComponentExt<P = {}, S = {}> extends React.Component<P, S> {
 }
 
 // store统一继承这个组件
-export class StoreExt<P = {}, S = {}> extends React.Component<P, S> {
+export class StoreExt {
     readonly api = api
     readonly $message = message
     readonly $notification = notification

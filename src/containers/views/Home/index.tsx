@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {inject, observer} from 'mobx-react'
+import { inject, observer } from 'mobx-react'
 
 import Increase from './Increase'
 import Decrease from './Decrease'
@@ -14,12 +14,13 @@ interface Props {
 @observer
 class Home extends ComponentExt<Props> {
     render() {
-        const {num, increase, decrease} = this.props.globalStore
+        const { num, increase, decrease } = this.props.globalStore
         return (
             <div className={style.home}>
                 <div>{num}</div>
-                <Increase increase={increase}/>
-                <Decrease decrease={decrease}/>
+                <Increase increase={increase} />
+                <Decrease decrease={decrease} />
+                <div className={style.aaa} />
             </div>
         )
     }

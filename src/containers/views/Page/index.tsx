@@ -37,4 +37,4 @@ class Page extends ComponentExt {
     }
 }
 
-export default hot(module)(Page)
+export default Page
