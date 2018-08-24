@@ -80,7 +80,7 @@ interface IProps {
     //xxx
 }
 
-class XXX extends ComponentExt {
+class XXX extends ComponentExt<IProps> {
     // your code
 }
 ```
